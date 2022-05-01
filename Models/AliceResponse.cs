@@ -13,7 +13,7 @@ public class Card
     public class Button
     {
         public string Title { get; set; }
-        public Payload Payload { get; set; }
+        public Dictionary<string, string> Payload { get; set; }
         public string Url { get; set; }
         public bool Hide { get; set; }
     }
@@ -71,11 +71,15 @@ public class Card
 
     public class AliceResponse
     {
-        public Response Response { get; set; }
+        public Response Response { get; set; } = new Response();
         public SessionState SessionState { get; set; }
         public UserStateUpdate UserStateUpdate { get; set; }
         public ApplicationState ApplicationState { get; set; }
         public Analytics Analytics { get; set; }
         public string Version { get; set; }
+        public AliceResponse(AliceRequest request)
+        {
+            Session = request.Session;
+        }
     }
 }

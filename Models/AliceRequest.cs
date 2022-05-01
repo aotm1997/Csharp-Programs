@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 namespace AliceHook.Models
 {
 public class Screen
@@ -35,6 +36,7 @@ public class Screen
     public class Request
     {
         public string Type { get; set; }
+        public Dictionary<string, string> Payload {get; set;}
     }
 
     public class User
